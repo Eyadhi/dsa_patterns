@@ -1,4 +1,4 @@
-package techniques.dynamicprogramming;
+package dynamicprogramming;
 
 public class HouseRobbery {
     public static int robbery(int[] nums) {

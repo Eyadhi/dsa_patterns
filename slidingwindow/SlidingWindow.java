@@ -1,4 +1,4 @@
-package techniques.slidingwindow;
+package slidingwindow;
 
 import java.util.ArrayList;
 import java.util.Deque;

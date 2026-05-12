@@ -1,4 +1,4 @@
-package techniques.dynamicprogramming;
+package dynamicprogramming;
 
 public class ArrayProblems {
 	public static int sequence(int a[]) {

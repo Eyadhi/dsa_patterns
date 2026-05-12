@@ -1,4 +1,4 @@
-package techniques.twoheaps;
+package twoheaps;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

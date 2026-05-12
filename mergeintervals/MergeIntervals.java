@@ -1,4 +1,4 @@
-package techniques.mergeintervals;
+package mergeintervals;
 
 import java.util.ArrayList;
 import java.util.Arrays;

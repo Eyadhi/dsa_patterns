@@ -1,4 +1,4 @@
-package techniques.bitmanipulation;
+package bitmanipulation;
 
 public class BitProblem {
     public static boolean isEven(int n) {

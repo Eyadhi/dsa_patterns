@@ -1,4 +1,4 @@
-package techniques.reverseinlinkedlist;
+package reverseinlinkedlist;
 
 class ListNode {
     int val;

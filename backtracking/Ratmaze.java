@@ -1,4 +1,4 @@
-package techniques.backtracking;
+package backtracking;
 
 import java.util.*;
 

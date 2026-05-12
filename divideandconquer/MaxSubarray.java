@@ -1,4 +1,4 @@
-package techniques.divideandconquer;
+package divideandconquer;
 
 public class MaxSubarray {
 
