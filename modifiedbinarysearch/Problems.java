@@ -1,4 +1,4 @@
-package techniques.modifiedbinarysearch;
+package modifiedbinarysearch;
 
 public class Problems {
     public static int searchInRotatedSortedArray(int[] nums, int target) {

@@ -1,4 +1,4 @@
-package techniques.subsets;
+package subsets;
 
 public class StringBuider {
 

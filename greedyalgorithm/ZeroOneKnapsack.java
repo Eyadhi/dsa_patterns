@@ -1,4 +1,4 @@
-package techniques.greedyalgorithm;
+package greedyalgorithm;
 
 import java.util.Arrays;
 import java.util.Comparator;

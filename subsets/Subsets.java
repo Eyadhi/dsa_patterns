@@ -1,4 +1,4 @@
-package techniques.subsets;
+package subsets;
 
 import java.util.ArrayList;
 import java.util.Arrays;

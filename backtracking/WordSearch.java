@@ -1,4 +1,4 @@
-package techniques.backtracking;
+package backtracking;
 
 public class WordSearch {
 	public static boolean searchWord(char[][] board, String word) {

@@ -1,4 +1,4 @@
-package techniques.fastslowpointers;
+package fastslowpointers;
 
 class ListNode {
     int val;

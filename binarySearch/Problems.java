@@ -1,4 +1,4 @@
-package techniques.binarySearch;
+package binarySearch;
 
 public class Problems {
     public static char nextGreatestLetter(char[] letters, char target) {
