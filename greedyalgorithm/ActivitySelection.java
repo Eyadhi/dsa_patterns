@@ -13,15 +13,10 @@ class Activity {
 
 public class ActivitySelection {
 	static void printMaxActivities(Activity arr[], int n) {
-		// Sort jobs according to finish time
 		System.out.println("Following activities are selected :");
-		// The first activity always gets selected
 		int i = 0;
 		System.out.print("(" + arr[i].start + ", " + arr[i].finish + ")");
-		// Consider rest of the activities
 		for (int j = 1; j < n; j++) {
-			// If this activity has start time greater than or equal to the finish time of
-			// previously selected activity, then select it
 			if (arr[j].start >= arr[i].finish) {
 				System.out.print(", (" + arr[j].start + ", " + arr[j].finish + ")");
 				i = j;
@@ -38,7 +33,6 @@ public class ActivitySelection {
 			arr[i] = new Activity(start[i], finish[i]);
 		}
 		Arrays.sort(arr, Comparator.comparingInt(a -> a.finish));
-		// Function call
 		printMaxActivities(arr, n);
 	}
 }
