@@ -1,12 +1,12 @@
 package dynamicprogramming;
 
 public class Problems {
-	public static int sequence(int a[]) {
-		int pre1 = a[0];
-		int pre2 = Math.max(a[0], a[1]);
-		for (int i = 2; i < a.length; i++) {
+	public static int sequence(int arr[]) {
+		int pre1 = arr[0];
+		int pre2 = Math.max(arr[0], arr[1]);
+		for (int i = 2; i < arr.length; i++) {
 			int temp = pre2;
-			pre2 = Math.max(pre1 + a[i], pre2);
+			pre2 = Math.max(pre1 + arr[i], pre2);
 			pre1 = temp;
 		}
 		return pre2;
