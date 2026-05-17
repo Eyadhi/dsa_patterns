@@ -14,8 +14,10 @@ public class BitProblem {
 
     public static void main(String[] args) {
         System.out.println(isEven(6));
+
+        
         
         System.out.println(isPowerOfTwo(8));
-        
+
     }
 }
