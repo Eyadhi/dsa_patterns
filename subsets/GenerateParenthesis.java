@@ -3,7 +3,7 @@ package subsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateParanthesis {
+public class GenerateParenthesis {
     public static List<String> generateParanthesis(int n) {
         List<String> result = new ArrayList<>();
         StringBuilder sb = new StringBuilder();

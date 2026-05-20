@@ -5,7 +5,7 @@ Problem-solving patterns and algorithmic techniques. Each folder contains implem
 ---
 
 ## Two Pointers
-**File: ** `twopointers/Problems.java`
+**File:** `twopointers/Problems.java`
 
 **When to use:** Problems involving sorted arrays, pairs, triplets, or subarrays.
 
@@ -56,6 +56,7 @@ Total = 8
 ---
 
 ## Fast & Slow Pointers
+**File:** `fastslowpointers/Problems.java`
 
 **When to use:** Linked list cycle detection, finding middle element, palindrome checking.
 
@@ -120,6 +121,7 @@ Output: [[1,6],[8,10],[15,18]]
 ---
 
 ## Cyclic Sort
+**File:** `cyclicsort/Problems.java`
 
 **When to use:** Problems with arrays containing numbers in a given range, missing numbers.
 
@@ -147,6 +149,8 @@ Applying binary search beyond simple array lookup — on answer spaces and circu
 ---
 
 ## In-place Reversal of LinkedList
+**File:** `reverseinlinkedlist/Problems.java`
+
 **When to use:** Reversing linked lists or parts of linked lists without extra space.
 
 **Time Complexity:** O(n) 
@@ -161,6 +165,7 @@ Applying binary search beyond simple array lookup — on answer spaces and circu
 ---
 
 ## Subsets
+**File:** `subsets/Subsets.java`
 
 **When to use:** Generating all combinations, permutations, or subsets.
 
@@ -177,6 +182,7 @@ Applying binary search beyond simple array lookup — on answer spaces and circu
 ---
 
 ## Modified Binary Search
+**File:** `modifiedbinarysearch/Problems.java`
 
 **When to use:** Searching in rotated/modified sorted arrays, finding peak elements.
 
@@ -193,6 +199,7 @@ Applying binary search beyond simple array lookup — on answer spaces and circu
 ---
 
 ## Top K Elements
+**File:** `topkelements/pq/Problems.java`
 
 **When to use:** Finding K largest/smallest elements, K closest elements.
 
