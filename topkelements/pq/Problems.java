@@ -72,6 +72,27 @@ public class Problems {
         return pq.peek();
     }
 
+    public int[][] kClosest(int[][] points, int k) {
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->
+        distance(b)-distance(a));
+        for(int[] point : points){
+            pq.offer(point);
+            if(pq.size()>k){
+                pq.poll();
+            }
+        } 
+
+        int[][] result = new int[k][2];
+        for(int i=0;i<k;i++){
+            result[i] = pq.poll();
+        }
+        return result;
+    }
+
+    private int distance(int[] point){
+        return point[0]*point[0] + point[1]*point[1];
+    }
+
     public static void main(String[] args) {
         int[] nums = {1,2,2,3,4,5};
         System.out.println(findKthLargest(nums,2));
