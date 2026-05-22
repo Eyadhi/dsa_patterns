@@ -2,8 +2,11 @@ package topkelements.pq;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Problems {
     public static int findKthLargest(int[] nums, int k) {
@@ -92,6 +95,8 @@ public class Problems {
     private int distance(int[] point){
         return point[0]*point[0] + point[1]*point[1];
     }
+
+    
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         PriorityQueue<int[]>pq = new PriorityQueue<>((a,b)->
         (a[0]+a[1])- (b[0]+b[1]));
