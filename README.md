@@ -258,6 +258,22 @@ XOR is commutative and associative
 
 ---
 
+**Fibonacci Numbers**
+
+**When to use:** Problems with recurrence relations, optimization with overlapping subproblems. 
+
+**Time Complexity:** O(n) 
+
+**Space Complexity:** O(1) with optimization
+
+**Pattern Recognition:**
+- Climbing stairs problems
+- House robber problems
+- Decode ways
+- Min cost climbing stairs
+
+---
+
 ## Backtracking
 **Files:** `backtracking/Ratmaze.java`, `backtracking/WordSearch.java`
 
@@ -317,40 +333,6 @@ Break problem into overlapping subproblems. Store results to avoid recomputation
 ```
 Key question: "Does this problem have overlapping subproblems and optimal substructure?"
 ```
-
-### Fibonacci — `Fibonaci.java`
-Classic DP intro. `fib[i] = fib[i-1] + fib[i-2]`
-
-| Method | Approach |
-|--------|----------|
-| `fibonacci(n)` | Bottom-up tabulation |
-| `fibonacci1(n)` | Returns full array |
-| `SpecFibo(n)` | Recursive (exponential — for comparison) |
-
----
-
-### Climbing Stairs — `ClimbingStairs.java`
-Count ways to reach step n taking 1 or 2 steps at a time. Same recurrence as Fibonacci.
-
-```
-n=3: [1+1+1, 1+2, 2+1] = 3 ways
-dp[i] = dp[i-1] + dp[i-2]
-```
-
----
-
-### House Robbery — `HouseRobbery.java`
-Max sum from non-adjacent elements. Can't rob two consecutive houses.
-
-```
-nums = [2, 3, 1, 3, 4]
-dp[i] = max(dp[i-1], dp[i-2] + nums[i])
-Answer: 8  (2 + 3 + 3 or 3 + 1 + 4)
-```
-
-Space-optimized with two variables `prev1`, `prev2` instead of full array.
-
----
 
 ### Pascal's Triangle — `PascalTriangle.java`
 Each element = sum of two elements above it.
