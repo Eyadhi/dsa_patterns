@@ -139,7 +139,76 @@ public class Knapsack {
         }
         return dp[m][n];
     }
-    
+
+    public int lastStoneWeightII(int[] stones) {
+        int sum =0;
+        for(int num:stones){
+            sum+=num;
+        }
+
+        int target = sum/2;
+        int n =stones.length;
+
+        boolean[][] dp = new boolean[n][target+1];
+        for(int i=0;i<n;i++){
+            dp[i][0]=true;
+        }
+
+        if(stones[0]<=target){
+            dp[0][stones[0]] =true;
+        }
+
+        for(int i=1;i<n;i++){
+            for(int j=1;j<=target;j++){
+                boolean exclude = dp[i-1][j];
+                boolean include = false;
+                if(stones[i]<=j){
+                    include = dp[i-1][j-stones[i]];
+                }
+
+                dp[i][j]=exclude || include ;
+            }
+        }
+
+        int subsetSum =0;
+
+        for(int i=target;i>=0;i--){
+            if(dp[n-1][i]){
+                subsetSum = i;
+                break;
+            }
+        }
+        return sum - 2*subsetSum;
+    }
+
+    public int lastStoneWeightII1(int[] stones) {
+        int sum =0;
+        for(int num:stones){
+            sum+=num;
+        }
+
+        int target = sum/2;
+
+        boolean[] dp = new boolean[target+1];
+        dp[0] = true;
+
+        for(int num:stones){
+            for(int c=target;c>=num;c--){
+                dp[c] = dp[c] || dp[c-num];
+            }
+        }
+
+        int subsetSum =0;
+
+        for(int i=target;i>=0;i--){
+            if(dp[i]){
+                subsetSum = i;
+                break;
+            }
+        }
+        return sum - 2*subsetSum;
+    }
+
     public static void main(String[] args) {
         int[] profits = {1, 6, 10, 16};
         int[] weights = {1, 2, 3, 5};
