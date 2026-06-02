@@ -93,6 +93,53 @@ public class Knapsack {
         return dp[target];
     }
 
+    public int findTargetSumWays(int[] nums, int target) {
+        int totalSum =0;
+        for(int num:nums){
+            totalSum+= num;
+        }
+
+        if(Math.abs(target) > totalSum || (target+totalSum)%2 !=0){
+            return 0;
+        }
+
+        int subsetSum = (totalSum+target)/2;
+
+        int[] dp = new int[subsetSum+1];
+        dp[0] = 1;
+
+        for(int num:nums){
+            for(int s= subsetSum;s>=num;s--){
+                dp[s]+= dp[s-num];
+            }
+        }
+        return dp[subsetSum];
+    }
+
+    public int findMaxForm(String[] strs, int m, int n) {
+        int[][] dp = new int[m+1][n+1];
+
+        for(String str:strs){
+            int zeroes = 0;
+            int ones = 0;
+
+            for(char ch:str.toCharArray()){
+                if(ch == '0'){
+                    zeroes++;
+                }else{
+                    ones++;
+                }
+            }
+
+            for(int z=m;z>=zeroes;z--){
+                for(int o=n;o>=ones;o--){
+                    dp[z][o] = Math.max(dp[z][o],1+dp[z-zeroes][o-ones]);
+                }
+            }
+        }
+        return dp[m][n];
+    }
+    
     public static void main(String[] args) {
         int[] profits = {1, 6, 10, 16};
         int[] weights = {1, 2, 3, 5};
