@@ -75,7 +75,7 @@ class Problem{
         return dp[n-1][amount] == INF?-1:dp[n-1][amount];
     }
 
-    public static int coinChange1(int[] coins, int amount) {
+    public static int coinChangeOptimized(int[] coins, int amount) {
         int n = coins.length;
         int INF = amount+1;
 
@@ -106,6 +106,62 @@ class Problem{
         return dp[amount] == INF?-1:dp[amount];
     }
 
+    public static int coinChange11(int[] coins, int amount) {
+        int n = coins.length;
+
+        int[][] dp =  new int[n][amount+1];
+
+        for(int i=0;i<n;i++){
+            dp[i][0]=1;
+        }
+        for(int j=1;j<=amount;j++){
+            if(j%coins[0] == 0){
+                dp[0][j] = 1;
+            }
+        }
+
+        for(int i=1;i<n;i++){
+            for(int j=1;j<=amount;j++){
+                int exclude = dp[i-1][j];
+                int include = 0;
+
+                if(coins[i]<=j){
+                    include = dp[i][j-coins[i]];
+                }
+                dp[i][j]=include+exclude;
+            }
+        }
+        
+        return dp[n-1][amount];
+    }
+
+    public static int coinChange11Optimized(int[] coins, int amount) {
+        int n = coins.length;
+
+        int[] dp =  new int[amount+1];
+        dp[0]=1;
+
+        for(int j=1;j<=amount;j++){
+            if(j%coins[0] == 0){
+                dp[j] = 1;
+            }
+        }
+
+        for(int i=1;i<n;i++){
+            for(int j=1;j<=amount;j++){
+                int exclude = dp[j];
+                int include = 0;
+
+                if(coins[i]<=j){
+                    include = dp[j-coins[i]];
+                }
+                dp[j]=include+exclude;
+            }
+        }
+        
+        return dp[amount];
+    }
+
     public static void main(String[] args) {
         int[] profits = {15, 50, 60, 90};
         int[] weights = {1, 3, 4, 5};
@@ -116,7 +172,11 @@ class Problem{
 
         int[] coins = {1,2,5};
         int amount = 11;
-        System.out.println(coinChange1(coins,amount)); // 11
+        System.out.println(coinChangeOptimized(coins,amount)); // 11
+
+        int[] coins1 = {1,2,5};
+        int amount1 = 5;
+        System.out.println(coinChange11(coins1,amount1)); // 4
 
     }
 }
