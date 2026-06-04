@@ -110,13 +110,13 @@ class Problem{
         int[] profits = {15, 50, 60, 90};
         int[] weights = {1, 3, 4, 5};
 
-        // int result = maxProfit(profits, weights, 8);
+        int result = maxProfit(profits, weights, 8);
 
-        // System.out.println(result); // 22
+        System.out.println(result); // 140
 
         int[] coins = {1,2,5};
         int amount = 11;
-        System.out.println(coinChange1(coins,amount));
+        System.out.println(coinChange1(coins,amount)); // 11
 
     }
 }
