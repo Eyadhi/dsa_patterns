@@ -1,5 +1,9 @@
 package knapsack.unboundedknapsack;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class Problem{
     public static int maxProfit(int[] profit,int[] weight,int capacity){
         int n = profit.length;
@@ -114,6 +118,7 @@ class Problem{
         for(int i=0;i<n;i++){
             dp[i][0]=1;
         }
+
         for(int j=1;j<=amount;j++){
             if(j%coins[0] == 0){
                 dp[0][j] = 1;
@@ -162,6 +167,64 @@ class Problem{
         return dp[amount];
     }
 
+    public static int numSquares(int n) {
+        List<Integer> list = new ArrayList<>();
+        for(int i=1;i<=Math.sqrt(n);i++){
+            list.add(i*i);
+        }
+        int len = list.size();
+
+        int[][] dp = new int[len][n+1];
+
+        for(int j=1;j<=n;j++){
+            if(j%list.get(0) == 0){
+                dp[0][j] = j/list.get(0);
+            }
+        }
+
+        for(int i=1;i<len;i++){
+            for(int j=1;j<=n;j++){
+                int exclude = dp[i-1][j];
+                int include = Integer.MAX_VALUE;
+
+                if(list.get(i)<=j){
+                    include = 1+ dp[i][j-list.get(i)];
+                }
+                dp[i][j]=Math.min(include,exclude);
+            }
+        }
+        return dp[len-1][n];
+    }
+
+    public static int numSquaresOptimized(int n) {
+        int[] dp = new int[n+1];
+
+        Arrays.fill(dp,n+1);
+        dp[0] =0;
+        
+        for(int i=1;i*i<=n;i++){
+            int square = i*i;
+            for(int j=square;j<=n;j++){
+                dp[j]=Math.min(dp[j],1+ dp[j-square]);
+            }
+        }
+        return dp[n];
+    }
+
+    public static int combinationSum4(int[] nums, int target) {
+        int[] dp = new int[target+1];
+        dp[0] =1;
+
+        for(int t=1;t<=target;t++){
+            for(int num:nums){
+                if(num<=t){
+                    dp[t]+=dp[t-num];
+                }
+            }
+        }
+        return dp[target];
+    }
+
     public static void main(String[] args) {
         int[] profits = {15, 50, 60, 90};
         int[] weights = {1, 3, 4, 5};
@@ -178,5 +241,11 @@ class Problem{
         int amount1 = 5;
         System.out.println(coinChange11(coins1,amount1)); // 4
 
+        int n =12;
+        System.out.println(numSquares(n));
+
+        int[] nums = {1,2,3};
+        int target =4;
+        System.out.println(combinationSum4(nums, target));
     }
 }
