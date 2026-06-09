@@ -54,6 +54,37 @@ public class Problems {
         return prev1;
     }
 
+    public static int houseRobbery11(int[] nums){
+        if(nums.length ==1)return nums[0];
+        return Math.max(getMaximum(nums,0,nums.length-2),getMaximum(nums,1,nums.length-1));
+    }
+
+    public static int getMaximum(int[] nums,int start,int end){
+        int prev1 = 0;
+        int prev2 = 0;
+
+        for (int i=start;i<=end;i++) {
+            int temp = prev1;
+            prev1 = Math.max(prev1, prev2 + nums[i]);
+            prev2 = temp;
+        }
+        return prev1;
+    }
+
+    public int minCostClimbingStairs(int[] cost) {
+        int n = cost.length;
+        int first = cost[0];
+        int second = cost[1];
+        if(n<=2)return Math.min(first,second);
+
+        for(int i=2;i<n;i++){
+            int current = cost[i]+Math.min(first,second);
+            first = second;
+            second = current;
+        }
+        return Math.min(first,second);
+    }
+
     public static void main(String[] args) {
         System.out.println(climbStairs(3));
 
