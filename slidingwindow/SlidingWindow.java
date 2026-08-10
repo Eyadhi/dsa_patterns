@@ -187,6 +187,7 @@ public class SlidingWindow {
         return maxLen;
     }
 
+    // 121. Best Time to Buy and Sell Stock
     public static int maxProfit(int[] prices) {
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
