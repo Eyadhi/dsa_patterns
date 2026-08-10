@@ -31,7 +31,6 @@ public class Problems {
         for (int fast = 1; fast < arr.length; fast++) {
             if (arr[fast] != arr[slow]) {
                 arr[++slow] = arr[fast];
-
             }
         }
         return arr;
