@@ -11,6 +11,8 @@ class ListNode {
 }
 
 public class Problems {
+
+    // 206. Reverse Linked List
     public ListNode reverse(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
@@ -24,6 +26,7 @@ public class Problems {
         return prev;
     }
 
+    // 92. Reverse Linked List II
     public ListNode reverseBetween(ListNode head, int left, int right) {
         if (head == null || left == right) {
             return head;
@@ -49,6 +52,7 @@ public class Problems {
         return dummy.next;
     }
 
+    // 25. Reverse Nodes in k-Group
     public ListNode reverseKGroup(ListNode head, int k) {
         if (head == null)
             return null;
