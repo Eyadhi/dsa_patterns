@@ -483,6 +483,32 @@ else:                          // right half is sorted
 
 ---
 
+## Bit Manipulation
+**File:** `bitmanipulation/BitProblem.java`
+
+Uses bitwise operators to solve problems in O(1) time and space.
+
+| Problem | Trick | Code |
+|---------|-------|------|
+| Check even/odd | Last bit is 0 for even | `(n & 1) == 0` |
+| Power of two | Only one bit set | `n > 0 && (n & (n-1)) == 0` |
+
+**Common bit tricks:**
+
+```
+n & 1        → check if odd
+n & (n-1)    → clear lowest set bit
+n | (1 << i) → set bit at position i
+n & (1 << i) → check bit at position i
+n ^ n        → 0 (XOR with itself)
+n ^ 0        → n (XOR with 0)
+a ^ b ^ a    → b (find unique element)
+```
+
+**When to use:** Flags, subsets, finding unique elements, power of 2 checks, swapping without temp.
+
+---
+
 ## Bitwise XOR
 
 **File:** `bitmanipulation/bitwisexor/Problems.java`
@@ -804,5 +830,33 @@ solve(row, col, path):
 3. Recursively explore all valid neighbors.
 4. **Unmark** the cell after returning (this is the backtrack step).
 5. Collect results when the goal condition is met.
+
+---
+
+## Binary Search (Problems)
+**File:** `binarySearch/Problems.java`
+
+Applying binary search beyond simple array lookup — on answer spaces and circular arrays.
+
+**Implemented:**
+- `nextGreatestLetter(letters, target)` — find the smallest letter greater than target in a sorted circular array
+
+**When to use:** Any monotonic condition where you can eliminate half the search space. Think: "Can I binary search on the answer?"
+
+---
+
+**Fibonacci Numbers**
+
+**When to use:** Problems with recurrence relations, optimization with overlapping subproblems. 
+
+**Time Complexity:** O(n) 
+
+**Space Complexity:** O(1) with optimization
+
+**Pattern Recognition:**
+- Climbing stairs problems
+- House robber problems
+- Decode ways
+- Min cost climbing stairs
 
 ---
