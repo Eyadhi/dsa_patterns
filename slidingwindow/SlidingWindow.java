@@ -41,17 +41,17 @@ public class SlidingWindow {
         return (maxSum / k);
     }
 
-    public int lengthOfLongestSubstring(String s) {
-        Set<Character> s1 = new HashSet<>();
+    public int lengthOfLongestSubstring(String str) {
+        Set<Character> set = new HashSet<>();
         int left = 0;
         int maxLen = 0;
         int right;
-        for (right = 0; right < s.length(); right++) {
-            while (s1.contains(s.charAt(right))) {
-                s1.remove(s.charAt(left));
+        for (right = 0; right < str.length(); right++) {
+            while (set.contains(str.charAt(right))) {
+                set.remove(str.charAt(left));
                 left++;
             }
-            s1.add(s.charAt(right));
+            set.add(str.charAt(right));
             maxLen = Math.max(maxLen, right - left + 1);
         }
         return maxLen;
