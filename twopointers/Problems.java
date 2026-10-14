@@ -54,10 +54,10 @@ public class Problems {
     }
 
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> l1 = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         int n = nums.length;
         if (nums == null || n < 3)
-            return l1;
+            return result;
         Arrays.sort(nums);
         for (int i = 0; i < n - 2; i++) {
             if (i > 0 && nums[i] == nums[i - 1])
@@ -67,7 +67,7 @@ public class Problems {
             while (j < k) {
                 int sum = nums[i] + nums[j] + nums[k];
                 if (sum == 0) {
-                    l1.add(List.of(nums[i], nums[j], nums[k]));
+                    result.add(List.of(nums[i], nums[j], nums[k]));
                     while (j < k && nums[j] == nums[j + 1])
                         j++;
                     while (j < k && nums[k] == nums[k - 1])
@@ -81,7 +81,7 @@ public class Problems {
                 }
             }
         }
-        return l1;
+        return result;
     }
 
     public int threeSumClosest(int[] nums, int target) {
